@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CabeceraComponent} from "./cabecera/cabecera.component";
-import {HomeComponent} from "./home/home.component";
-import {PieComponent} from "./pie/pie.component";
+import { CabeceraComponent } from "./cabecera/cabecera.component";
+import { HomeComponent } from "./home/home.component";
+import { PieComponent } from "./pie/pie.component";
+import { RouterLink } from '@angular/router';
+
 
 
 
@@ -12,12 +14,14 @@ import {PieComponent} from "./pie/pie.component";
     PieComponent],
   imports: [
     CommonModule,
+    RouterLink
 
   ],
-  exports:[
+  exports: [
     CabeceraComponent,
     HomeComponent,
-    PieComponent
+    PieComponent,
+
   ]
 })
 export class ComunModule { }
