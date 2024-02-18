@@ -7,6 +7,7 @@ import { ComunModule } from "./comun/comun.module";
 import { PartidosModule } from './partidos/partidos.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     ComunModule,
     PartidosModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

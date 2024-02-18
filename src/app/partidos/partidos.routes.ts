@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListaPartidosComponent } from './lista-partidos/lista-partidos.component'; // Reemplaza con el nombre real de tu componente
+import { ListaPartidosComponent } from './partido/lista-partidos/lista-partidos.component';
+import {FormularioPartidoComponent} from "./partido/formulario-partido/formulario-partido.component"; // Reemplaza con el nombre real de tu componente
 
 const routes: Routes = [
-  { path: 'listado', component: ListaPartidosComponent }, // Reemplaza 'listado' con la ruta que desees
-  // Agrega más rutas si es necesario
+  { path: '', component: ListaPartidosComponent },
+  { path: 'agregar', component: FormularioPartidoComponent },
 ];
 
 @NgModule({
-  declarations: [], // Asegúrate de declarar tus componentes aquí
+  declarations: [],
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })

@@ -1,0 +1,29 @@
+<h1>Nuevo pratido</h1>
+<form [formGroup]="formulario" (ngSubmit)="submit()">
+  <p>Equipo local
+    <input type="text" formControlName="local" required>
+    <span *ngIf="this.formulario.get('local')?.errors?.['required']">
+      (El campo esta vacio)
+    </span>
+  </p>
+  <p>Equipo visitante
+    <input type="text" formControlName="visitante" required>
+    <span *ngIf="this.formulario.get('visitante')?.errors?.['required']">
+      (El campo esta vacio)
+    </span>
+  </p>
+  <p>Fecha del partido
+    <input type="date" formControlName="fecha" required>
+    <span *ngIf="this.formulario.get('fecha')?.errors?.['required']">
+      (El campo esta vacio)
+    </span>
+  </p>
+  <p>Hora del partido
+    <input type="date" formControlName="hora" required>
+    <span *ngIf="this.formulario.get('hora')?.errors?.['required']">
+      (El campo esta vacio)
+    </span>
+  </p>
+  <button type="submit">Añadir</button>
+</form>
+<p>{{resultado}}</p>

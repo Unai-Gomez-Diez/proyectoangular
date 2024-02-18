@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GestorPartidosService } from '../../Servicios/gestor-partidos.service';
-import { Partido } from '../../data/partido';
+import { GestorPartidosService } from '../../../Servicios/gestor-partidos.service';
+import { Partido } from '../../../data/partido';
 
 @Component({
   selector: 'app-lista-partidos',
