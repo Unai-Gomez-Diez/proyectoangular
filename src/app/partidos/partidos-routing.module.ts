@@ -5,7 +5,7 @@ import { ListaPartidosComponent } from './partido/lista-partidos/lista-partidos.
 import {FormularioPartidoComponent} from "./partido/formulario-partido/formulario-partido.component"; // Reemplaza con el nombre real de tu componente
 
 const routes: Routes = [
-  { path: '', component: ListaPartidosComponent },
+  { path: 'partidos', component: ListaPartidosComponent },
   { path: 'agregar', component: FormularioPartidoComponent },
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PartidosModule { }
+export class PartidosRoutingModule { }

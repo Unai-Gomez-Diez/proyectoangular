@@ -1,3 +1,9 @@
+<div style="width: 40%;" class="text-center p-3 mb-2 bg-secondary text-white padding-top: 20px;">
+  <img src="../../../../assets/Images/partidos.jpg" class="rounded-circle" width="150px" height="150px">
+  <h1>Partidos</h1>
+  <p>En esta página mostraremos los próximos partidos</p>
+  <button type="button" routerLink="/partidos/agregar">Nuevo Partido</button>
+</div>
 <h1>Nuevo pratido</h1>
 <form [formGroup]="formulario" (ngSubmit)="submit()">
   <p>Equipo local
@@ -19,7 +25,7 @@
     </span>
   </p>
   <p>Hora del partido
-    <input type="date" formControlName="hora" required>
+    <input type="text" formControlName="hora" required>
     <span *ngIf="this.formulario.get('hora')?.errors?.['required']">
       (El campo esta vacio)
     </span>
