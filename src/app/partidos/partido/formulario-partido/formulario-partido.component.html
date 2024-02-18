@@ -1,35 +1,40 @@
-<div style="width: 40%;" class="text-center p-3 mb-2 bg-secondary text-white padding-top: 20px;">
+<div style="display: flex; ">
+<div style="width: 40%; text-align: center; padding: 3rem; background-color: #495057; color: #fff; float: left">
   <img src="../../../../assets/Images/partidos.jpg" class="rounded-circle" width="150px" height="150px">
   <h1>Partidos</h1>
   <p>En esta página mostraremos los próximos partidos</p>
-  <button type="button" routerLink="/partidos/agregar">Nuevo Partido</button>
+  <button type="button" routerLink="agregar">Nuevo Partido</button>
 </div>
-<h1>Nuevo pratido</h1>
-<form [formGroup]="formulario" (ngSubmit)="submit()">
-  <p>Equipo local
-    <input type="text" formControlName="local" required>
-    <span *ngIf="this.formulario.get('local')?.errors?.['required']">
-      (El campo esta vacio)
-    </span>
-  </p>
-  <p>Equipo visitante
-    <input type="text" formControlName="visitante" required>
-    <span *ngIf="this.formulario.get('visitante')?.errors?.['required']">
-      (El campo esta vacio)
-    </span>
-  </p>
-  <p>Fecha del partido
-    <input type="date" formControlName="fecha" required>
-    <span *ngIf="this.formulario.get('fecha')?.errors?.['required']">
-      (El campo esta vacio)
-    </span>
-  </p>
-  <p>Hora del partido
-    <input type="text" formControlName="hora" required>
-    <span *ngIf="this.formulario.get('hora')?.errors?.['required']">
-      (El campo esta vacio)
-    </span>
-  </p>
-  <button type="submit">Añadir</button>
-</form>
-<p>{{resultado}}</p>
+
+<div style="width: 60%; float: left; margin-top: 20px;">
+  <h1>Nuevo partido</h1>
+  <form [formGroup]="formulario" (ngSubmit)="submit()">
+    <p>Equipo local
+      <input type="text" formControlName="local" required>
+      <span *ngIf="this.formulario.get('local')?.errors?.['required']">
+        (El campo está vacío)
+      </span>
+    </p>
+    <p>Equipo visitante
+      <input type="text" formControlName="visitante" required>
+      <span *ngIf="this.formulario.get('visitante')?.errors?.['required']">
+        (El campo está vacío)
+      </span>
+    </p>
+    <p>Fecha del partido
+      <input type="date" formControlName="fecha" required>
+      <span *ngIf="this.formulario.get('fecha')?.errors?.['required']">
+        (El campo está vacío)
+      </span>
+    </p>
+    <p>Hora del partido
+      <input type="text" formControlName="hora" required>
+      <span *ngIf="this.formulario.get('hora')?.errors?.['required']">
+        (El campo está vacío)
+      </span>
+    </p>
+    <button type="submit" [disabled]="this.formulario.invalid">Añadir</button>
+  </form>
+  <p>{{resultado}}</p>
+</div>
+</div>

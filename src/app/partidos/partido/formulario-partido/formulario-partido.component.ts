@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {GestorPartidosService} from "../../../Servicios/gestor-partidos.service";
+import {Gol, Partido} from "../../../data/partido";
+import {Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-formulario-partido',
@@ -8,8 +11,16 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class FormularioPartidoComponent {
   resultado!: string
+  partido: Partido= {
+    idPartido: '',
+    idLocal: '',
+    idVisitante: '',
+    fechaHora: '',
+    goles: [],
+    tarjetas: []
+  };
+  constructor(private fb: FormBuilder, private service: GestorPartidosService, private route: Router) {
 
-  constructor(private fb: FormBuilder) {
   }
   formulario = this.fb.group({
     local: ["",Validators.required],
@@ -18,6 +29,10 @@ export class FormularioPartidoComponent {
     hora:["", Validators.required]
   })
   submit(){
-
+    this.partido.idLocal = <string>this.formulario.value.local
+    this.partido.idVisitante = <string>this.formulario.value.visitante
+    this.partido.fechaHora = <string>this.formulario.value.fecha + this.formulario.value.hora
+    this.service.modPartidos(this.partido)
+    this.route.navigate(["/partidos"])
   }
 }
